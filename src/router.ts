@@ -15,7 +15,7 @@ import { Router } from "express";
 const router = Router();
 
 router.get("/",()=>{
-    throw new Error("laaaaaaa");
+    throw new Error("Hello word");
 })
 
 export default router;
