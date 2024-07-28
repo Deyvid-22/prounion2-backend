@@ -11,11 +11,10 @@
 
 import { Router } from "express";
 
+import { AddUserControler } from "./controllers/user/AdduserController";
 
 const router = Router();
 
-router.get("/",()=>{
-    throw new Error("Hello word");
-})
+router.post("/users", new AddUserControler().handle)
 
 export default router;

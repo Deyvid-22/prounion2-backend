@@ -9,11 +9,6 @@ const connection = mysql.createConnection({
     password : process.env.DB_PASSWORD,
 });
 
-connection.connect((err) => {
-    if (err) {
-        console.error("Erro ao conectar ao banco de dados");
-    }
-    console.log("Conectado ao banco de dados");
-});
+connection.connect();
 
 export default connection;
