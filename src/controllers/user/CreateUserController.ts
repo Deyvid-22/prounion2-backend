@@ -7,7 +7,6 @@ export class CreateUserControler{
         
         const {name, email, password} = req.body as {name:string, email: string,password:string};
     
-
         const createUserService = new CreateUserService();
 
         const user = await createUserService.execute( { name,email, password })

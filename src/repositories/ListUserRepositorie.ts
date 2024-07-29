@@ -6,8 +6,8 @@ export class UserRepository {
 
     const sql = "SELECT * FROM users;";
     
-    const User = await Query(sql);
-
-    return User;
+    const user = await Query(sql);
+     
+    return user;
   }
 }

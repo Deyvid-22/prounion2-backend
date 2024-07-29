@@ -8,7 +8,7 @@ interface CreateProps {
   password: string;
 }
 
-export class CreatUserRepositories {
+export class CreateUserRepositories {
 
   async create({name, email, password}:CreateProps){
     

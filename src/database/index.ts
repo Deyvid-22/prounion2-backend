@@ -12,10 +12,10 @@ const connection = mysql.createConnection({
 
 connection.connect()
 
-export const Query = (sql:string)=>{
+export const Query = (sql:string,id:any = "")=>{
 
     return new Promise((resolve,reject)=>{
-        connection.query(sql,(erro,results)=>{
+        connection.query(sql,id,(erro,results)=>{
 
             if(erro){
                 reject(Error);

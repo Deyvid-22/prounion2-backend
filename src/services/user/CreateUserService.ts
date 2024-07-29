@@ -1,4 +1,4 @@
-import { CreatUserRepositories } from "../../repositories/CreateUserRepositorie";
+import { CreateUserRepositories } from "../../repositories/CreateUserRepositorie";
 
 import { Query } from "../../database";
 
@@ -25,7 +25,7 @@ export class CreateUserService {
           
           if (Count > 0) return {sucess:false, message: "usuário já existente!" }
     
-          const creatUserRepositories = new CreatUserRepositories()
+          const creatUserRepositories = new CreateUserRepositories()
 
           const user = creatUserRepositories.create({
             name,

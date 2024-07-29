@@ -22,4 +22,12 @@ router.post("/users", new CreateUserControler().handle)
 import { ListUserController } from "./controllers/user/ListUserController";
 router.get("/users", new ListUserController().handle)
 
+//delete user
+import { DeleteUserController } from "./controllers/user/DeleteUserController";
+router.delete("/users", new DeleteUserController().handle)
+
+//update user 
+import { UpdateUserController } from "./controllers/user/UpdateUserController";
+router.put("/users/:id", new UpdateUserController().handle)
+
 export default router;
