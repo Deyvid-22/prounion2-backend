@@ -1,10 +1,5 @@
 import { UserRepository } from "../../repositories/ListUserRepositorie"
 
-interface  CreateProps{
-  name:string,
-  email:string
-  password:string;
-}
 
 export class ListUserService{
 
