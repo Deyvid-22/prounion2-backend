@@ -1,6 +1,10 @@
 import mysql from "mysql2";
 import dotenv from "dotenv";
 
+// conexão com o banco mysql
+//nome do banco users 
+//nome da tabela users
+
 dotenv.config();
 
 const connection = mysql.createConnection({

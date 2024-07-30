@@ -12,7 +12,7 @@ export class CreateUserRepositories {
 
   async create({name, email, password}:CreateProps){
     
-    // password = await bcrypt.hash(password,10)
+    password = await bcrypt.hash(password,10)
 
     const sql = `INSERT INTO users.users (name, email,password) VALUES ('${name}', '${email}', '${password}');`
     const user =  Query(sql)

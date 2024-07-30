@@ -14,7 +14,8 @@ import { Router } from "express";
 
 const router = Router();
 
-import { verify } from "./Middleware/user/UserMiddleware";
+//verifição da senha
+import { verify } from "./Middleware/user/UserMiddleware"; 
 
 //create user
 import { CreateUserControler } from "./controllers/user/CreateUserController";

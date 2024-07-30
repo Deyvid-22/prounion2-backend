@@ -1,42 +1,34 @@
-// import { Query } from "../../database";
-
-// export class UserRepository {
-  
-//   async getPasswordHash(userId: string) {
-  
-
-
-//   }
-// }
-
 import { Request, Response, NextFunction} from "express";
 
 import { Query } from "../../database";
 
-  
+import { compare } from "bcryptjs"
+
 export async function verify(req:Request,res:Response,next:NextFunction){
    
    
        const { password } = req.body
        const { id } = req.params
 
+       
        if(!password){
-          throw new Error("preencha os campos necessários");
-       }
+            throw new Error("preencha os campos necessários");
+          }
+          
+          const sql = "SELECT password FROM users WHERE id = ?;";
+          
+          const result = await Query(sql, [id]);
+          
+          const senha = result[0].password
 
-       const sql = "SELECT password FROM users WHERE id = ?;";
-      
-       const result = await Query(sql, [id]);
+          const decript = await compare(password,senha)
 
-       const senha = result[0].password
+          console.log(decript)
 
-       if(password != senha){
-            console.log("parou aq")
+       if(!decript){
             throw new Error("Dados incorretos");
           }
             
+          console.log("dados corretos")
           next()
-          console.log(senha)
-          console.log(password)
-    
 }
