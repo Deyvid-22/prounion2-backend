@@ -14,6 +14,8 @@ import { Router } from "express";
 
 const router = Router();
 
+import { verify } from "./Middleware/user/UserMiddleware";
+
 //create user
 import { CreateUserControler } from "./controllers/user/CreateUserController";
 router.post("/users", new CreateUserControler().handle)
@@ -24,10 +26,10 @@ router.get("/users", new ListUserController().handle)
 
 //delete user
 import { DeleteUserController } from "./controllers/user/DeleteUserController";
-router.delete("/users", new DeleteUserController().handle)
+router.delete("/users/:id", verify,new DeleteUserController().handle)
 
 //update user 
 import { UpdateUserController } from "./controllers/user/UpdateUserController";
-router.put("/users/:id", new UpdateUserController().handle)
+router.put("/users/:id", verify,new UpdateUserController().handle)
 
 export default router;

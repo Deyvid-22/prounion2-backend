@@ -12,7 +12,7 @@ export class ListUserService{
     
     const userRepository = new UserRepository()
 
-    const user = await userRepository .findAll()
+    const user = await userRepository.findAll()
 
     return user
     }

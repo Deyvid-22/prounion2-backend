@@ -3,14 +3,13 @@ import { Query } from "../database";
 
 export class DeleteUserRepositorie {
 
-    async  delete({email}:{email:string}){
+    async  delete({id}:{id:string}){
 
-           const sql = `DELETE FROM users WHERE email = '${email}`;
-           
+        const sql = `DELETE FROM users WHERE id = '${id}'`;
+ 
            const user = await Query(sql);
 
            return user;
     }
-
 }
 
